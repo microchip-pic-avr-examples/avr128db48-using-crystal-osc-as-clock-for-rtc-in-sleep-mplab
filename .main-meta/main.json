@@ -1,0 +1,54 @@
+{
+    "metaDataVersion": "1.0.0",
+    "category": "com.microchip.ide.project",
+    "content": {
+        "metaDataVersion": "1.3.0",
+        "name": "com.microchip.mcu8.mplabx.project.avr128db48-using-crystal-osc-as-clock-for-rtc-in-sleep-mplab",
+        "version": " ",
+        "displayName": "",
+        "projectName": "avr128db48-using-crystal-osc-as-clock-for-rtc-in-sleep-mplab",
+        "shortDescription": "This code example demonstrates usage of AVR128DB48 microcontroller for configuring external crystal as clock source in sleep. In this code example, external crystal as peripheral clock source in sleep is exemplified using Real-Time Counter (RTC).",
+        "ide": {
+            "name": "MPLAB X",
+            "semverRange": ">=6.0.0"
+        },
+        "compiler": [
+            {
+                "name": "XC8",
+                "semverRange": "^2.40.0"
+            }
+        ],
+        "dfp": {
+            "name": "",
+            "semverRange": ""
+        },
+        "configurator": {
+            "name": "",
+            "semverRange": ""
+        },
+        "device": {
+            "metaDataVersion": "1.0.0",
+            "category": "com.microchip.portal.contentRef",
+            "content": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.device",
+                "name": "AVR128DB48",
+                "versionRange": "*"
+            }
+        },
+        "author": "Amey Panse",
+        "peripherals": [],
+        "keywords": [],
+        "additionalData": {
+            "longDescription": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.portal.fileRef",
+                "content": {
+                    "metaDataVersion": "1.0.0",
+                    "fileName": "./README.md",
+                    "mimeType": "text/markdown"
+                }
+            }
+        }
+    }
+}
