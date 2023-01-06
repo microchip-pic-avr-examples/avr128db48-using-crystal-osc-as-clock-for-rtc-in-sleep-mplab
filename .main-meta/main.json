@@ -4,13 +4,13 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.avr128db48-using-crystal-osc-as-clock-for-rtc-in-sleep-mplab",
-        "version": " ",
-        "displayName": "",
+        "version": "1.0.0",
+        "displayName": "Configure external 32.768kHz crystal as a RTC clock source in sleep using AVR128DB48",
         "projectName": "avr128db48-using-crystal-osc-as-clock-for-rtc-in-sleep-mplab",
         "shortDescription": "This code example demonstrates usage of AVR128DB48 microcontroller for configuring external crystal as clock source in sleep. In this code example, external crystal as peripheral clock source in sleep is exemplified using Real-Time Counter (RTC).",
         "ide": {
             "name": "MPLAB X",
-            "semverRange": ">=6.0.0"
+            "semverRange": ">=6.05.0"
         },
         "compiler": [
             {
@@ -19,12 +19,12 @@
             }
         ],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "AVR-Dx_DFP",
+            "semverRange": "^2.3.272"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": ">=5.2.2"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -37,8 +37,8 @@
             }
         },
         "author": "Amey Panse",
-        "peripherals": [],
-        "keywords": [],
+        "peripherals": ["RTC", "SLPCTRL"],
+        "keywords": ["Deep Sleep", "Sleep Controller", "32.768 kHz Crystal Oscillator", "Crystal Oscillator"],
         "additionalData": {
             "longDescription": {
                 "metaDataVersion": "1.0.0",
