@@ -10,7 +10,7 @@
         "shortDescription": "This code example demonstrates usage of AVR128DB48 microcontroller for configuring external crystal as clock source in sleep. In this code example, external crystal as peripheral clock source in sleep is exemplified using Real-Time Counter (RTC).",
         "ide": {
             "name": "MPLAB X",
-            "semverRange": ">=6.05.0"
+            "semverRange": ">=6.5.0"
         },
         "compiler": [
             {
