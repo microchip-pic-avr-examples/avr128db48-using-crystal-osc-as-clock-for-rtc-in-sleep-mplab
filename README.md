@@ -4,11 +4,11 @@
 
 # Configure the External 32.768 kHz Crystal as an RTC Clock Source in Sleep Mode Using AVR128DB48
 
-This code example demonstrates how to configure an external 32.768 kHz crystal as a clock source to the Real-Time Counter (RTC) module of AVR microcontrollers. In this code example, the RTC module of AVR128DB48 microcontroller is supplied with an external 32.768 kHz crystal clock source while the microcontroller is in Sleep mode(Power-Down mode). It will show the power consumption by the device in Sleep mode and how external crystal as clock is accurate and consumes less power than the internal HF oscillator.
+This code example demonstrates how to configure an external 32.768 kHz crystal as a clock source to the Real-Time Counter (RTC) module of AVR microcontrollers. In this code example, the RTC module of AVR128DB48 microcontroller is supplied with an external 32.768 kHz crystal clock source while the microcontroller is in Sleep mode (Power-Down mode). It will show the power consumption by the device in Sleep mode and how external crystal as clock is accurate and consumes less power than the internal high frequency (HF) oscillator.
 
 ## Introduction
 
-In many applications which are battery operated, the microcontroller is dependent on methodical Sleep mode techniques that shut down some or all peripheral operations to reduce the power consumption, enabling it to work for longer time on limited resources. The AVR128DB48 microcontrollers of the AVR® DB family of microcontrollers family uses the latest technologies from Microchip with a flexible and low power architecture. The AVR128DB48 simplified set of features includes Real-Time Counter (RTC), which offers two timing functionalities in form of RTC and Periodic Interrupt Timer (PIT). The PIT functionality uses the same clock source as RTC but it can be enabled independently. The objective of this example is to show how to use RTC in Sleep mode (Power-down mode) with an external crystal as a clock source. 
+In many applications which are battery operated, the microcontroller is dependent on methodical Sleep mode techniques that shut down some or all peripheral operations to reduce the power consumption, enabling it to work for a longer time on limited resources. The AVR128DB48 microcontrollers of the AVR® DB family of microcontrollers family uses the latest technologies from Microchip with a flexible and low power architecture. The AVR128DB48 simplified set of features includes Real-Time Counter (RTC), which offers two timing functionalities in form of RTC and Periodic Interrupt Timer (PIT). The PIT functionality uses the same clock source as RTC, but it can be enabled independently. The objective of this example is to show how to use RTC in Sleep mode (Power-Down mode) with an external crystal as a clock source. 
 
 ## Useful Links
 
@@ -17,7 +17,7 @@ In many applications which are battery operated, the microcontroller is dependen
 
 ## Description
 
-The objective of this code example is to enable low-power "Power-down" mode in the microcontroller and configure the RTC module to operate in PIT mode using an external 32.768 kHz crystal oscillator, and completely shut down the microcontroller system clock and peripherals. Thereby, the microcontroller wakes up from Sleep to PIT periodic interrupt. This implementation helps to minimize the microcontroller average power consumption. For the demonstration purpose, the switch event is used to switch to the external crystal oscillator as the clock source and let the microcontroller enter Sleep mode. After the RTC period elapse, the PIT interrupt occurs and the clock source for the microcontroller switches back to the internal HF oscillator and is in Active mode.
+The objective of this code example is to enable low-power "Power-Down" mode in the microcontroller and configure the RTC module to operate in PIT mode using an external 32.768 kHz crystal oscillator, and completely shut down the microcontroller system clock and peripherals. Thereby, the microcontroller wakes up from Sleep to PIT. This implementation helps to minimize the microcontroller average power consumption. For the demonstration purpose, the switch event is used to switch to the external crystal oscillator as the clock source and lets the microcontroller enter Sleep mode. After the RTC period elapse, the PIT interrupt occurs and the clock source for the microcontroller switches back to the internal HF oscillator and is in Active mode.
 
 <p align="center">
   <img width=600 height=auto src="images/blk_diag.png">
@@ -44,7 +44,7 @@ MPLAB® X IDE compiler and graphical code generators are used throughout the app
 
 ## Application Firmware
 
-The example firmware uses the RTC peripheral to showcase the working of a microcontroller in Sleep mode by using 32.768 kHz external crystal oscillator as its clock source. During the active period, the system uses the 4 MHz internal oscillator. The Sleep control system peripheral is configured in Power-down mode with the Performance mode being set to auto. Here, in Power-Down Sleep mode, only the Periodic Interrupt Timer functionality is available. The PIT uses the same clock source as RTC. The RTC period is configured for 30s. If a switch press event is detected, the RTC peripheral gets enabled, and the system enters the Power-down mode. The RTC flag is monitored to check if the RTC period is completed via the interrupt service routine(ISR). After the RTC period of 30s is completed, the device wakes up from Sleep. As soon as it wakes up, the RTC peripheral gets disabled and the MCU continues to stay in Active mode until a new switch press event is detected.
+The example firmware uses the RTC peripheral to showcase the working of a microcontroller in Sleep mode by using 32.768 kHz external crystal oscillator as its clock source. During the active period, the system uses the 4 MHz internal oscillator. The Sleep control system peripheral is configured in Power-Down mode with the Performance mode being set to auto. Here, in Power-Down Sleep mode, only the Periodic Interrupt Timer functionality is available. The PIT uses the same clock source as RTC. The RTC period is configured for 30s. If a switch press event is detected, the RTC peripheral gets enabled, and the system enters the Power-Down mode. The RTC flag is monitored to check if the RTC period is completed via the Interrupt Service Routine (ISR). After the RTC period of 30s is completed, the device wakes up from Sleep. As soon as it wakes up, the RTC peripheral gets disabled and the MCU continues to stay in Active mode until a new switch press event is detected.
 
 <p align="center">
   <img width=600 height=auto src="images/flowchart.png">
@@ -53,16 +53,16 @@ The example firmware uses the RTC peripheral to showcase the working of a microc
 
 ## Appendix
 
-MCC – MPLAB Code Configurator is a graphical programming environment that generates seamless, easy to understand C code to give a head start to the project, saving the designer’s time to initialize and configure all the modules, and to go through the data sheets. Using an instructive interface, it enables and configures all peripherals and functions specific to the application requirements.
+MPLAB Code Configurator (MCC) is a graphical programming environment that generates seamless, easy to understand C code that gives a head start to the project. It saves the designer’s time to initialize and configure all the modules, and to go through the data sheets. Using an instructive interface, it enables and configures all peripherals and functions specific to the application requirements.
 
 **Start by creating a new Project and open MCC**
 
 * Open MPLAB X IDE
-* Go to File>New Project
-* Select Microchip Embedded>Standalone Project
+* Go to *File>New Project*
+* Select *Microchip Embedded>Standalone Project*
 * Enter the device name. In this case, select AVR128DB48 device
 * Name the project
-* Launch MCC tool by navigating to **“Tools>Embedded>MPLAB Code Configurator v4: Open/Close”**. Alternatively, click the MCC icon to launch the MCC tool
+* Launch MCC tool by navigating to *Tools>Embedded>MPLAB Code Configurator v4: Open/Close*. Alternatively, click the MCC icon to launch the MCC tool
 
 ## System configuration
 
@@ -90,7 +90,7 @@ Open **SLPCTRL** setup present under **System** dropdown menu in **Project Resou
 * Performance Mode: AUTO
 
 <p align="center">
-  <img width=600 height=auto src="images/Sleep_config.png">
+  <img width=600 height=auto src="images/sleep_config.png">
   <br>Figure 4: Sleep Control Configuration<br>
 </p>
 
@@ -131,7 +131,7 @@ The following figure consists of AVR128DB48 Curiosity Nano Evaluation kit along 
 
 ## Data Visualizer
 
-* The Data Gateway Interface(DGI) is available on the Microchip evaluation kits with an embedded programmer and debugger (EDBG) . These evaluation kits can communicate with the data visualizer through DGI. The figure below shows the DGI control panel of the data visualizer. All detected DGI devices are listed in the dropdown list with the kit name and serial number. Using the **Connect** button will connect to the selected DGI device and query for available interfaces.
+* The Data Gateway Interface (DGI) is available on the Microchip evaluation kits with an embedded programmer and debugger (EDBG) . These evaluation kits can communicate with the data visualizer through DGI. The figure below shows the DGI control panel of the data visualizer. All detected DGI devices are listed in the dropdown list with the kit name and serial number. Using the **Connect** button will connect to the selected DGI device and query for available interfaces.
 
 <p align="center">
   <img width=600 height=auto src="images/pwr_debug1.png">
@@ -174,12 +174,12 @@ The following figure consists of AVR128DB48 Curiosity Nano Evaluation kit along 
 5. Press the on-board switch. It will switch the clock source to the external crystal.
 
 <p align="center">
-  <img width=600 height=auto src="images/Sleep_current.png">
+  <img width=600 height=auto src="images/sleep_current.png">
   <br>Figure 14: Sleep Current<br>
 </p>
 
 6. Observe the device current consumption in the Sleep mode.
-7. Wait for 30s or any further switch press to determine the current consumption in Active mode
+7. Wait for 30s or any further switch press to determine the current consumption in Active mode.
 
 ## Conclusion
 The power consumption of the microcontroller plays an important role in the battery powered applications. Hence, it is important to keep the microcontroller power consumption as minimum as possible for a longer battery life. This code example demonstrates low-power Sleep implementation using RTC and external crystal oscillator of AVR128DB48 microcontroller, as the external crystal oscillator provides a better overall performance compared to the internal oscillator and also minimizes the overall power consumptions of the microcontroller.
