@@ -4,7 +4,7 @@
 
 # Configure the External 32.768 kHz Crystal as an RTC Clock Source in Sleep Mode Using AVR128DB48
 
-This code example demonstrates usage of AVR128DB48 microcontroller for configuring external crystal as peripheral clock source in sleep. In this example, external crystal as peripheral clock source in sleep is exemplified using Real-Time Counter(RTC).
+This code example demonstrates how to configure an external 32.768 kHz crystal as a clock source to the Real-Time Counter (RTC) module of AVR microcontrollers. In this code example, the RTC module of AVR128DB48 microcontroller is supplied with an external 32.768 kHz crystal clock source while the microcontroller is in Sleep mode (Power-Down mode). It will show the power consumption by the device in Sleep mode and how external crystal as clock is accurate and consumes less power than the internal high frequency (HF) oscillator.
 
 ## Introduction
 
